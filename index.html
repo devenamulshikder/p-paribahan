@@ -28,64 +28,69 @@
     </style>
   </head>
   <body>
-    <header>
+    <header class="font-raleway">
       <!-- nav section start-->
-      <div class="navbar bg-base-100">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+      <section>
+        <nav class="container mx-auto my-8">
+          <div class="navbar bg-base-100">
+            <div class="navbar-start">
+              <a class="btn btn-ghost text-3xl font-extrabold font-raleway"
+                >P-Ticket</a
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
             </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li><a>Item 1</a></li>
-              <li>
-                <a>Parent</a>
-                <ul class="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li>
-              <li><a>Item 3</a></li>
-            </ul>
+            <div class="navbar-center hidden lg:flex">
+              <ul class="menu menu-horizontal flex flex-row gap-10 text-lg">
+                <li>
+                  <a>Home</a>
+                </li>
+                <li>
+                  <a>About</a>
+                </li>
+                <li>
+                  <a>Destination</a>
+                </li>
+                <li>
+                  <a>Search</a>
+                </li>
+              </ul>
+            </div>
+            <div class="navbar-end">
+              <a
+                class="btn bg-[#e8fae6] border-2px border-[#1dd100] text-[20px] font-bold"
+                ><span class="text-[#1dd100]">Bus</span>
+                <img src="./images/bus-icon.png" alt=""
+              /></a>
+            </div>
           </div>
-          <a class="btn btn-ghost text-xl">daisyUI</a>
-        </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
-            <li><a>Item 1</a></li>
-            <li>
-              <details>
-                <summary>Parent</summary>
-                <ul class="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </details>
-            </li>
-            <li><a>Item 3</a></li>
-          </ul>
-        </div>
-        <div class="navbar-end">
-          <a class="btn">Button</a>
-        </div>
-      </div>
+        </nav>
+      </section>
       <!-- nav section end-->
+      <!-- banner section start -->
+      <section class="container mx-auto my-8">
+        <div>
+          <div
+            class="hero min-h-screen rounded-3xl"
+            style="
+              background-image: url(./images/banner.png)
+            "
+          >
+            <div class="hero-content text-center text-neutral-content">
+              <div class="max-w-2xl ">
+                <div class="">
+                    <h1 class=" mb-5 text-6xl font-extrabold ">End-to-End Travel with <br><span class=" text-[#1dd100]">P Paribahan</span></h1>
+                </div>
+                <p class="mb-5 font-inter text-lg">
+                  Provident cupiditate voluptatem et in. Quaerat fugiat ut
+                  assumenda excepturi exercitationem quasi. In deleniti eaque
+                  aut repudiandae et a id nisi.
+                </p>
+                <button class="btn ">Buy Tickets</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- banner section end -->
     </header>
     <main></main>
     <footer></footer>
