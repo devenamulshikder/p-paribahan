@@ -229,7 +229,9 @@
 
       <!-- select your seat section -->
       <section class="container mx-auto my-8">
-        <div>
+        <div
+          class="flex flex-row justify-center gap-32 rounded-2xl p-5 lg:p-10"
+        >
           <!-- select your seat section One -->
           <div>
             <h1 class="text-2xl font-raleway font-semibold mb-4">
@@ -268,6 +270,7 @@
                 <p>I</p>
                 <p>J</p>
               </div>
+              <!-- all button -->
               <div
                 class="grid grid-cols-4 grid-rows-10 justify-center items-center gap-10"
               >
@@ -315,7 +318,83 @@
             </div>
           </div>
           <!-- select your seat section Two -->
-          <div></div>
+          <div>
+              <h1 class="text-2xl font-semibold font-raleway mb-4">
+                Select Your Seat
+              </h1>
+              <hr class="border border-dashed mb-5" />
+              <div class="space-y-5 bg-[#F7F8F8] p-5 rounded-lg">
+                <div
+                  class="flex justify-between "
+                >
+                  <h3 class="font-inter text-[16px] font-medium">
+                    Seat
+                    <span
+                      class="text-[12px] px-2 rounded-lg text-white font-medium font-inter bg-[#1dd100]"
+                      >0</span
+                    >
+                  </h3>
+                  <h3 class="font-inter text-[16px] font-medium">Class</h3>
+                  <h3 class="font-inter text-[16px] font-medium">Price</h3>
+                </div>
+                <hr class="mt-5 bg-gray-400" />
+                <div class="flex justify-between">
+                  <h1 class="text-[16px] font-medium">Total Price</h1>
+                  <p class="font-bold">BDT 1100</p>
+                </div>
+                <div class="flex flex-col lg:flex-row">
+                  <input
+                    class="py-3 px-8 bg-white shadow-lg rounded-l-lg"
+                    type="text"placeholder="Have any copupon?"
+                  />
+                  <button
+                    id="coupon-button"
+                    class=" px-3 rounded-r-md bg-[#1dd100] text-white font-bold"
+                  >
+                    Apply
+                  </button>
+                </div>
+              </div>
+
+              <div class="space-y-5 mt-5">
+                <label class="text-[16px] font-inter font-semibold block" for="name"
+                  >Passenger Name*</label
+                >
+                <input
+                  class="p-4 w-full border-2 rounded-lg"
+                  type="text "
+                  id="name"
+                  placeholder="Enter your name "
+                />
+                <label class="text-[16px] font-inter font-semibold block" for="number"
+                  >Phone Number*</label
+                >
+                <input
+                  class="p-4 w-full border-2 rounded-lg "
+                  type="number "
+                  id="number"
+                  placeholder="Enter your phone number"
+                />
+                <label class="text-[16px] font-inter font-semibold block" for="email"
+                  >Email ID</label
+                >
+                <input
+                  class="p-4 w-full border-2 rounded-lg"
+                  type="text "
+                  id="email"
+                  placeholder="Enter your email id"
+                />
+                <button
+                  class="btn bg-[#1DD100] w-full font-inter font-extrabold text-white text-sm"
+                >
+                  Next
+                </button>
+                <div class="flex justify-between text-[#03071280] font-inter underline">
+                  <a href="#">Terms and Conditions</a>
+                  <a href="#">Cancellation Policy</a>
+                </div>
+              </div>
+          </div>
         </div>
       </section>
     </main>
