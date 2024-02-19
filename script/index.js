@@ -2,6 +2,35 @@ let selectedSeats = [];
 let availableSeat = 40;
 let sitPrice = 550;
 let serial = 1;
+let discountCodes = {
+  NEW15: 15,
+  Couple20: 20,
+};
+
+function calculateTotalPrice() {
+  const totalPrice = selectedSeats.length * sitPrice;
+  const couponInput = document.getElementById("coupon-input").value;
+  const discountPercentage = discountCodes[couponInput] || 0;
+  const discountPrice = totalPrice * (1 - discountPercentage / 100);
+  return discountPrice;
+}
+
+function updateTotalPrice() {
+  const discountedPrice = calculateTotalPrice();
+  const totalPrice = selectedSeats.length * sitPrice;
+  const discountAmount = totalPrice - discountedPrice;
+  // update ui
+  const totalPriceElement = (document.getElementById("total-price").innerText =
+    totalPrice);
+  totalPriceElement.innerText = totalPrice;
+  const discountPriceElement = (document.getElementById(
+    "discount-price"
+  ).innerText = discountAmount);
+  const grandTotalPriceElement = (document.getElementById(
+    "grand-total"
+  ).innerText = totalPrice-discountAmount);
+}
+
 function handleClick(event) {
   const clickButton = event.target;
   if (clickButton.classList.contains("selected")) {
@@ -12,7 +41,6 @@ function handleClick(event) {
     alert("You have already 4 seat selected");
     return;
   }
-
   //click Button and show per seat, class and per seat price
   // 1. seat serial
   const seatSerial = clickButton.innerText;
@@ -21,27 +49,18 @@ function handleClick(event) {
   p.innerText = serial + ". " + seatSerial;
   titleContainer.appendChild(p);
   serial++;
-
   // 2. class serial
   const classSerial = "Economoy";
   const classContainer = document.getElementById("class-seat-price");
   const p2 = document.createElement("p");
   p2.innerText = classSerial;
   classContainer.appendChild(p2);
-
-  //price serial 
+  //3. price serial
   const priceContainer = document.getElementById("price-seat-class");
   const p3 = document.createElement("p");
   p3.innerText = sitPrice;
   priceContainer.appendChild(p3);
-
-  // // price serial
-  // const priceSerial = (clickButton.innerText = sitPrice);
-  // const priceContainer = document.getElementById("price-seat-class");
-  // const p3 = document.createElement("p");
-  // p3.innerText = priceSerial;
-  // priceContainer.appendChild(p3);
-
+  
   clickButton.classList.add("selected");
   clickButton.style.backgroundColor = "#1dd100";
   clickButton.style.color = "white";
@@ -51,16 +70,20 @@ function handleClick(event) {
   availableSeat--;
   document.getElementById("left-seat").innerText = availableSeat;
   document.getElementById("select-seat").innerText = selectedCount;
-  calculateTotalPrice();
+  updateTotalPrice();
 }
+
+document.getElementById("coupon-button").addEventListener("click", () => {
+  console.log("click");
+  const couponInput = document.getElementById("coupon-input").value;
+  if (!(couponInput in discountCodes)) {
+    alert("Invalid Coupon Code");
+    return;
+  }
+  updateTotalPrice();
+});
+
 document.querySelectorAll("#btn").forEach((button) => {
   button.addEventListener("click", handleClick);
 });
-function calculateTotalPrice() {
-  const totalPrice = selectedSeats.length * sitPrice;
-  const totalPriceElement = (document.getElementById("total-price").innerText =
-    totalPrice);
-  const grandTotalPriceElement = (document.getElementById(
-    "grand-total"
-  ).innerText = totalPrice);
-}
+// coupon applied

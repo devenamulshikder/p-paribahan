@@ -122,7 +122,7 @@
             <img src="./images/cupon-devider.png" alt="" />
             <div class="flex flex-col justify-center">
               <h1 class="font-raleway font-bold text-4xl text-[#030712]">
-                NEW15%
+                NEW15
               </h1>
               <h3 class="text-lg opacity-60">Coupon Code</h3>
             </div>
@@ -139,7 +139,7 @@
             <img src="./images/cupon-devider.png" alt="" />
             <div class="flex flex-col justify-center">
               <h1 class="font-raleway font-bold text-4xl text-[#030712]">
-                Couple 20
+                Couple20
               </h1>
               <h3 class="text-lg opacity-60">Coupon Code</h3>
             </div>
@@ -361,8 +361,12 @@
                 <h1 class="text-[16px] font-medium">Total Price</h1>
                 <p class="font-bold">BDT <span id="total-price">00</span></p>
               </div>
-              <div class="flex flex-col lg:flex-row">
-                <input
+              <div class="flex justify-between">
+                <h1 class="text-[16px] font-medium">Discount Price</h1>
+                <p class="font-bold">BDT <span id="discount-price">00</span></p>
+              </div>
+              <div id="discount-count" class="flex flex-col lg:flex-row">
+                <input id="coupon-input"
                   class="py-3 px-8 bg-white shadow-lg rounded-l-lg"
                   type="text"
                   placeholder="Have any copupon?"
@@ -374,7 +378,7 @@
                   Apply
                 </button>
               </div>
-              <div class="flex justify-between">
+              <div id="grand-total-price" class="flex justify-between">
                 <h1 class="text-[16px] font-medium">Grand total Price</h1>
                 <p class="font-bold">BDT <span id="grand-total">00</span></p>
               </div>
