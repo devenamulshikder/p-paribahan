@@ -6,7 +6,6 @@ let discountCodes = {
   NEW15: 15,
   Couple20: 20,
 };
-
 function calculateTotalPrice() {
   const totalPrice = selectedSeats.length * sitPrice;
   const couponInput = document.getElementById("coupon-input").value;
@@ -14,12 +13,10 @@ function calculateTotalPrice() {
   const discountPrice = totalPrice * (1 - discountPercentage / 100);
   return discountPrice;
 }
-
 function updateTotalPrice() {
   const discountedPrice = calculateTotalPrice();
   const totalPrice = selectedSeats.length * sitPrice;
   const discountAmount = totalPrice - discountedPrice;
-  // update ui
   const totalPriceElement = (document.getElementById("total-price").innerText =
     totalPrice);
   totalPriceElement.innerText = totalPrice;
@@ -28,9 +25,8 @@ function updateTotalPrice() {
   ).innerText = discountAmount);
   const grandTotalPriceElement = (document.getElementById(
     "grand-total"
-  ).innerText = totalPrice-discountAmount);
+  ).innerText = totalPrice - discountAmount);
 }
-
 function handleClick(event) {
   const clickButton = event.target;
   if (clickButton.classList.contains("selected")) {
@@ -41,7 +37,6 @@ function handleClick(event) {
     alert("You have already 4 seat selected");
     return;
   }
-  //click Button and show per seat, class and per seat price
   // 1. seat serial
   const seatSerial = clickButton.innerText;
   const titleContainer = document.getElementById("seat-class-price");
@@ -60,7 +55,6 @@ function handleClick(event) {
   const p3 = document.createElement("p");
   p3.innerText = sitPrice;
   priceContainer.appendChild(p3);
-  // 
   clickButton.classList.add("selected");
   clickButton.style.backgroundColor = "#1dd100";
   clickButton.style.color = "white";
@@ -80,7 +74,7 @@ document.getElementById("coupon-button").addEventListener("click", () => {
     return;
   }
   updateTotalPrice();
-  document.getElementById("discount-content").style.display='none';
+  document.getElementById("discount-content").style.display = "none";
 });
 document.querySelectorAll("#btn").forEach((button) => {
   button.addEventListener("click", handleClick);
