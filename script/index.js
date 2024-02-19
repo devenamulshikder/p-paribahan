@@ -25,12 +25,11 @@ function handleClick(event) {
 document.querySelectorAll("#btn").forEach((button) => {
   button.addEventListener("click", handleClick);
 });
-// function calculateTotalPrice() {
-//   const totalPrice = seletedSeats.length * sitPrice;
-//   const totalPriceElement = (document.getElementById("total-price").innerText =
-//     totalPrice);
-//   const grandTotalPriceElement = (document.getElementById(
-//     "grand-total"
-//   ).innerText = totalPrice);
-// }
-
+function calculateTotalPrice() {
+  const totalPrice = seletedSeats.length * sitPrice;
+  const totalPriceElement = (document.getElementById("total-price").innerText =
+    totalPrice);
+  const grandTotalPriceElement = (document.getElementById(
+    "grand-total"
+  ).innerText = totalPrice);
+}
