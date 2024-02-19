@@ -60,7 +60,7 @@ function handleClick(event) {
   const p3 = document.createElement("p");
   p3.innerText = sitPrice;
   priceContainer.appendChild(p3);
-  
+  // 
   clickButton.classList.add("selected");
   clickButton.style.backgroundColor = "#1dd100";
   clickButton.style.color = "white";
@@ -72,7 +72,6 @@ function handleClick(event) {
   document.getElementById("select-seat").innerText = selectedCount;
   updateTotalPrice();
 }
-
 document.getElementById("coupon-button").addEventListener("click", () => {
   console.log("click");
   const couponInput = document.getElementById("coupon-input").value;
@@ -81,9 +80,8 @@ document.getElementById("coupon-button").addEventListener("click", () => {
     return;
   }
   updateTotalPrice();
+  document.getElementById("discount-content").style.display='none';
 });
-
 document.querySelectorAll("#btn").forEach((button) => {
   button.addEventListener("click", handleClick);
 });
-// coupon applied
